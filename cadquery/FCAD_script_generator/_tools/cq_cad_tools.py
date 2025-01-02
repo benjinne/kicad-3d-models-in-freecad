@@ -696,7 +696,7 @@ def runGeometryCheck(App, Gui, step_path, log,
         log.write('\t- Union check:    [    FAIL    ]\n')
         geometry_error_container.append(NotUnionedError(modelName))
         #stop
-    if FC_majorV == 0 and FC_minorV >= 17:
+    if (FC_majorV == 0 and FC_minorV >= 17) or FC_majorV > 0:
         if docu.Objects == 0:
             FreeCAD.Console.PrintError('Step import seems to fail. No objects to check\n')
         for o in docu.Objects:

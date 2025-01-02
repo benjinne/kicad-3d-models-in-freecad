@@ -79,7 +79,6 @@ else:
 from cq_helpers import *
 
 import cadquery as cq
-from Helpers import show
 from collections import namedtuple
 import FreeCAD
 from conn_jst_gh_params import *
@@ -301,5 +300,5 @@ if "module" in __name__ :
 
     (body, pins) = generate_part(params)
     body = body.translate((0,0,body_off_center_z))
-    show(pins)
-    show(body)
+    show_object(pins)
+    show_object(body)

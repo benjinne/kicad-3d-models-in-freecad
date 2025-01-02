@@ -158,13 +158,13 @@ def export_one_part(modul, variant):
     (pins, body, contacts) = modul.generate_part(variant)
 
     color_attr = body_color + (0,)
-    show(body, color_attr)
+    show_object(body, color_attr)
 
     color_attr = pins_color + (0,)
-    show(pins, color_attr)
+    show_object(pins, color_attr)
 
     color_attr = contacts_color + (0,)
-    show(contacts, color_attr)
+    show_object(contacts, color_attr)
 
     doc = FreeCAD.ActiveDocument
     doc.Label=ModelName

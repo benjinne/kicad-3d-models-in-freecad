@@ -403,5 +403,5 @@ if "module" in __name__:
                                  str(num_pins) + "pins variant\n")
     (body, contacts) = generate_part(num_pins)
 
-    show(body)
-    show(contacts)
+    show_object(body)
+    show_object(contacts)

@@ -262,9 +262,9 @@ if __name__ == "__main__" or __name__ == "main_generator":
         Gui.ActiveDocument=Gui.getDocument(CheckedModelName)
         case, pins, mark = make_chip(model, all_params)
 
-        show(case)
-        show(pins)
-        show(mark)
+        show_object(case)
+        show_object(pins)
+        show_object(mark)
    
         doc = FreeCAD.ActiveDocument
         objs=GetListOfObjects(FreeCAD, doc)

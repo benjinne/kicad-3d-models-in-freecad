@@ -518,10 +518,10 @@ def make_3D_model(models_dir, variant):
     if (all_params[variant].pintype == CASE_SMD_TYPE):
         pins = make_pins_smd(all_params[variant])
 
-    show(case)
-    show(casetop)
-    show(pins)
-    #show(pinmark)
+    show_object(case)
+    show_object(casetop)
+    show_object(pins)
+    #show_object(pinmark)
     #stop
     doc = FreeCAD.ActiveDocument
     objs=GetListOfObjects(FreeCAD, doc)

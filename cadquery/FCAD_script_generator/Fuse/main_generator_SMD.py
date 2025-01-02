@@ -235,9 +235,9 @@ if __name__ == "__main__" or __name__ == "main_generator_SMD":
 
         body, pins, top = make_chip(model, all_params)
 
-        show(body)
-        show(pins)
-        show(top)
+        show_object(body)
+        show_object(pins)
+        show_object(top)
         
         doc = FreeCAD.ActiveDocument
         objs = GetListOfObjects(FreeCAD, doc)

@@ -303,10 +303,10 @@ def make_3D_model(models_dir, variant, n=1):
     pins = make_pins(all_params[variant], n)
     marking = make_marking(all_params[variant], n)
 
-    show(body)
-    show(pins)
+    show_object(body)
+    show_object(pins)
     if marking != None:
-        show(marking)
+        show_object(marking)
 
 
     doc = FreeCAD.ActiveDocument

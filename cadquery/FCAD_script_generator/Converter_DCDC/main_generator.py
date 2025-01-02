@@ -450,10 +450,10 @@ def make_3D_model(models_dir, variant):
     casetop = make_case_top(all_params[variant])
     pins = make_pins(all_params[variant])
 
-    show(case)
-    show(casetop)
-    show(pins)
-    #show(pinmark)
+    show_object(case)
+    show_object(casetop)
+    show_object(pins)
+    #show_object(pinmark)
     #stop
     doc = FreeCAD.ActiveDocument
     objs=GetListOfObjects(FreeCAD, doc)

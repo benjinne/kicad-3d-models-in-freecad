@@ -227,64 +227,64 @@ def make_3D_model(models_dir, variant):
     if all_params[variant].modeltype == 'BX0036':
         case = make_case_BX0036(all_params[variant])
         pins = make_pins(all_params[variant])
-        show(case)
-        show(pins)
+        show_object(case)
+        show_object(pins)
         modelfileName = make_modelfileName_Common(all_params[variant])
         #
         #
     elif all_params[variant].modeltype == 'Button1':
         case = make_case_Button1(all_params[variant])
         pins = make_pins(all_params[variant])
-        show(case)
-        show(pins)
+        show_object(case)
+        show_object(pins)
         modelfileName = make_modelfileName_Common(all_params[variant])
         #
         #
     elif all_params[variant].modeltype == 'Button2':
         case = make_case_Button2(all_params[variant])
         pins = make_pins(all_params[variant])
-        show(case)
-        show(pins)
+        show_object(case)
+        show_object(pins)
         modelfileName = make_modelfileName_Common(all_params[variant])
         #
         #
     elif all_params[variant].modeltype == 'Button3':
         case = make_case_Button3(all_params[variant])
         pins = make_pins(all_params[variant])
-        show(case)
-        show(pins)
+        show_object(case)
+        show_object(pins)
         modelfileName = make_modelfileName_Common(all_params[variant])
         #
         #
     elif all_params[variant].modeltype == 'Button4':
         case = make_case_Button4(all_params[variant])
         pins = make_pins(all_params[variant])
-        show(case)
-        show(pins)
+        show_object(case)
+        show_object(pins)
         modelfileName = make_modelfileName_Common(all_params[variant])
         #
         #
     elif all_params[variant].modeltype == 'Cylinder1':
         case = make_case_Cylinder1(all_params[variant])
         pins = make_pins(all_params[variant])
-        show(case)
-        show(pins)
+        show_object(case)
+        show_object(pins)
         modelfileName = make_modelfileName_Common(all_params[variant])
         #
         #
     elif variant == 'Seiko_MS621F':
         case = make_case_Seiko_MS621F(all_params[variant])
         pins = make_pins_Seiko_MS621F(all_params[variant])
-        show(case)
-        show(pins)
+        show_object(case)
+        show_object(pins)
         modelfileName = make_modelfileName_Common(all_params[variant])
         #
         #
     elif variant == 'Keystone_2993':
         case = make_case_Keystone_2993(all_params[variant])
         pins = make_pins_Keystone_2993(all_params[variant])
-        show(case)
-        show(pins)
+        show_object(case)
+        show_object(pins)
         modelfileName = make_modelfileName_Common(all_params[variant])
         #
         #
@@ -292,7 +292,7 @@ def make_3D_model(models_dir, variant):
         FreeCAD.Console.PrintMessage("\r\nSerie %s does not exist, skipping'\r\n" % all_params[variant].serie)
         return
 
-    #show(pinmark)
+    #show_object(pinmark)
     #stop
     doc = FreeCAD.ActiveDocument
     objs=GetListOfObjects(FreeCAD, doc)

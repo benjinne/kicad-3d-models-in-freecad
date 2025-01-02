@@ -352,8 +352,8 @@ def MakeHeader(n, model, all_params):
         print (" is not recognized, please check parameters")
         stop
 
-    show(base)
-    show(pins)
+    show_object(base)
+    show_object(pins)
 
     doc = FreeCAD.ActiveDocument
     objs=GetListOfObjects(FreeCAD, doc)
@@ -546,8 +546,8 @@ if __name__ == "temp.module":
     ##
     ## case, pins = make_pinheader(5)
     ##
-    ## show(case, (60,60,60,0))
-    ## show(pins)
+    ## show_object(case, (60,60,60,0))
+    ## show_object(pins)
 
 
 

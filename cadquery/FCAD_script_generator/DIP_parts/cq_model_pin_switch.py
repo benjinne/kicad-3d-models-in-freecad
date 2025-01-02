@@ -166,10 +166,10 @@ class dip_switch (PartBase):
                  .close().extrude(h)
 
     def make(self):
-        show(self.make_body())
-        show(self.make_pins())
-        show(self.make_buttons())
-        show(self.make_pinmark(self.button_width + 0.2))
+        show_object(self.make_body())
+        show_object(self.make_pins())
+        show_object(self.make_buttons())
+        show_object(self.make_pinmark(self.button_width + 0.2))
 
 class dip_switch_low_profile (dip_switch):
 

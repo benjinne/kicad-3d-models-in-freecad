@@ -230,15 +230,15 @@ def make_3D_model(models_dir, variant):
     if (all_params[variant].serie == 'RV_Disc'):
         case = make_case_RV_Disc(all_params[variant])
         pins = make_pins_RV_Disc(all_params[variant])
-        show(case)
-        show(pins)
+        show_object(case)
+        show_object(pins)
     else:
         print("Serie " + all_params[variant].serie + " is not supported")
         FreeCAD.Console.PrintMessage('\r\nSerie ' + all_params[variant].serie + ' is not supported\r\n')
         sys.exit()
 
 
-    #show(pinmark)
+    #show_object(pinmark)
     #stop
     doc = FreeCAD.ActiveDocument
     objs=GetListOfObjects(FreeCAD, doc)

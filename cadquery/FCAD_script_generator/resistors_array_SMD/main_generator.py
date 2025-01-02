@@ -236,9 +236,9 @@ def make_chip(params):
     pins = merged_pins
 
     #body_copy.ShapeColor=result.ShapeColor
-    #show(case)
-    #show(top)
-    #show(pins)
+    #show_object(case)
+    #show_object(top)
+    #show_object(pins)
     # extract case from pins
     case = case.cut(pins)
     # pins = pins.cut(case, True, True)
@@ -291,9 +291,9 @@ if __name__ == "__main__" or __name__ == "main_generator":
         Gui.ActiveDocument=Gui.getDocument(CheckedModelName)
         body, pins, top = make_chip(all_params[variant])
 
-        show(body)
-        show(pins)
-        show(top)
+        show_object(body)
+        show_object(pins)
+        show_object(top)
         
         doc = FreeCAD.ActiveDocument
         objs = GetListOfObjects(FreeCAD, doc)

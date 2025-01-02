@@ -299,8 +299,8 @@ def make_3D_model(models_dir, variant, pinnumber):
     if all_params[variant].serie == 'AK300':
         case = make_case_AK300(all_params[variant], pinnumber)
         pins = make_pins_AK300(all_params[variant], pinnumber)
-        show(case)
-        show(pins)
+        show_object(case)
+        show_object(pins)
         #
         #
         modelfileName = modelfileName + all_params[variant].manufacture + '_' + all_params[variant].serie
@@ -311,7 +311,7 @@ def make_3D_model(models_dir, variant, pinnumber):
         FreeCAD.Console.PrintMessage("\r\nSerie %s does not exist, skipping'\r\n" % all_params[variant].serie)
         return
     
-    #show(pinmark)
+    #show_object(pinmark)
     #stop
     doc = FreeCAD.ActiveDocument
     objs=GetListOfObjects(FreeCAD, doc)

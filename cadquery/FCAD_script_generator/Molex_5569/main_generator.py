@@ -189,13 +189,13 @@ for variant in variants:
     Gui.ActiveDocument = Gui.getDocument(CheckedModelName)
     pins, body = MakePart(all_params_molex_5569[variant])
 
-    show(pins)
-    show(body)
+    show_object(pins)
+    show_object(body)
 
 # pairs = 3
 
 # result = MakePinPairs(pairs)
-# show(result)
+# show_object(result)
 
 # body = MakeBody(pairs)
-# show(body)
+# show_object(body)

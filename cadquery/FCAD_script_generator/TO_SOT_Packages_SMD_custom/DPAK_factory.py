@@ -672,5 +672,5 @@ if "module" in __name__:
 
     for key in model.keys():
         if key is not '__name':
-            show(model[key]['part'])
+            show_object(model[key]['part'])
 

@@ -202,13 +202,13 @@ def generate_package3d(params, part_params, mpn):
     body_color_key = "black body"
     body_color = shaderColors.named_colors[body_color_key].getDiffuseFloat()
     body = generate_body(params, part_params)
-    show(body, body_color + (0,))
+    show_object(body, body_color + (0,))
     
     # Generate pins
     pins_color_key = "gold pins"
     pins_color = shaderColors.named_colors[pins_color_key].getDiffuseFloat()
     pins = generate_pins(params, part_params)
-    show(pins, pins_color + (0,))
+    show_object(pins, pins_color + (0,))
     
     # Finalize
     doc = FreeCAD.ActiveDocument

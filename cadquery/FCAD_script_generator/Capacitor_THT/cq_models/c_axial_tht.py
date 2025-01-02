@@ -142,5 +142,5 @@ if "module" in __name__:
     body, pins= generate_part(all_params[variant]) #body, base, mark, pins, top
 
 
-    show(body)
-    show(pins)
+    show_object(body)
+    show_object(pins)

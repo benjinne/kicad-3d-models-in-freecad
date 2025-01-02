@@ -266,8 +266,8 @@ if "module" in __name__:
                                  part_to_build + "\n")
     (pins, body, contacts) = generate_part(part_to_build)
 
-    show(pins)
-    show(body)
-    show(contacts)
+    show_object(pins)
+    show_object(body)
+    show_object(contacts)
 
 

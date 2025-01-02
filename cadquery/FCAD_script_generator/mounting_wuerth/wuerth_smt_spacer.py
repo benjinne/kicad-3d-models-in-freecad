@@ -183,7 +183,7 @@ if "module" in __name__:
     #     h=3,
     #     ext_thread=ext_thread
     # )
-    show(body)
+    show_object(body)
 
 if __name__ == "__main__" or __name__ == "wuerth_smt_spacer":
     sys.path.append("../_tools")
@@ -309,7 +309,7 @@ if __name__ == "__main__" or __name__ == "wuerth_smt_spacer":
                             )
 
         color_i = colors[0] + (0,)
-        show(cq_obj_data, color_i)
+        show_object(cq_obj_data, color_i)
 
         doc = FreeCAD.ActiveDocument
         doc.Label = ModelName

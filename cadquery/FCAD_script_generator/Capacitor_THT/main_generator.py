@@ -161,7 +161,7 @@ def export_one_part(module, params, configuration, log):
 
     for i in range(len(cq_obj_data)):
         color_i = colors[i] + (0,)
-        show(cq_obj_data[i], color_i)
+        show_object(cq_obj_data[i], color_i)
 
 
     doc = FreeCAD.ActiveDocument

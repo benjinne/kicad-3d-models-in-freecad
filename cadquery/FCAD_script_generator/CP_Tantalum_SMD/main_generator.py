@@ -248,7 +248,7 @@ def make_tantalum(params):
         bpin2 = bpin2.cut(anode)
     #show (bpin2)
     #show (bpinv)
-    #show(bpin1)
+    #show_object(bpin1)
     #show (bpin)
 
     merged_pins=bpin
@@ -257,7 +257,7 @@ def make_tantalum(params):
     merged_pins=merged_pins.union(bpinv)
     pins = merged_pins
 
-    #show(pins)
+    #show_object(pins)
     #sleep
 
     return (body, pins, pinmark)
@@ -298,9 +298,9 @@ def generateOneModel(part_params, log):
     Gui.ActiveDocument=Gui.getDocument(CheckedModelName)
     body, pins, mark = make_tantalum(dim_params)
 
-    show(body)
-    show(pins)
-    show(mark)
+    show_object(body)
+    show_object(pins)
+    show_object(mark)
     
     doc = FreeCAD.ActiveDocument
     objs = GetListOfObjects(FreeCAD, doc)

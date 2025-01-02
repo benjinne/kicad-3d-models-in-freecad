@@ -379,6 +379,6 @@ if "module" in __name__:
                                  str(num_pins) + "pins variant\n")
     (body, pins, contacts) = generate_part(num_pins)
 
-    show(body)
-    show(pins)
-    show(contacts)
+    show_object(body)
+    show_object(pins)
+    show_object(contacts)

@@ -169,8 +169,8 @@ class socket_strip (PartBase):
         return pins
 
     def make(self):        
-        show(self._make_body())
-        show(self._make_pins())
+        show_object(self._make_body())
+        show_object(self._make_pins())
 
 class angled_socket_strip (socket_strip):
 

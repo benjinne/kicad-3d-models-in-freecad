@@ -246,9 +246,9 @@ if __name__ == "__main__" or __name__ == "main_generator":
         Gui.ActiveDocument=Gui.getDocument(CheckedModelName)
         case_top, case, pins = make_transformer(all_params[variant])
 
-        show(case_top)
-        show(case)
-        show(pins)
+        show_object(case_top)
+        show_object(case)
+        show_object(pins)
         #stop
         
         doc = FreeCAD.ActiveDocument

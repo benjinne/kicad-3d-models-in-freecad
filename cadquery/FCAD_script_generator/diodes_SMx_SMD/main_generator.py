@@ -199,7 +199,7 @@ def make_Smx(params):
     merged_pins=merged_pins.union(bpinv)
     pins = merged_pins
 
-    #show(pins)
+    #show_object(pins)
     #sleep
 
     return (body, pins, pinmark)
@@ -257,9 +257,9 @@ if __name__ == "__main__" or __name__ == "main_generator":
         Gui.ActiveDocument=Gui.getDocument(CheckedModelName)
         body, pins, mark = make_Smx(all_params[variant])
 
-        show(body)
-        show(pins)
-        show(mark)
+        show_object(body)
+        show_object(pins)
+        show_object(mark)
         
         doc = FreeCAD.ActiveDocument
         objs = GetListOfObjects(FreeCAD, doc)

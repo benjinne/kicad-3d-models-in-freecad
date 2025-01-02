@@ -434,7 +434,7 @@ def make_qfn(params):
         merged_pins = merged_pins.union(p)
     pins = merged_pins
 
-    #show(pins)
+    #show_object(pins)
     #sleep
     # extract pins from case
     case = case.cut(pins)
@@ -502,9 +502,9 @@ if __name__ == "__main__" or __name__ == "main_generator":
         Gui.ActiveDocument=Gui.getDocument(CheckedModelName)
         case, pins, pinmark = make_qfn(all_params[variant])
 
-        show(case)
-        show(pins)
-        show(pinmark)
+        show_object(case)
+        show_object(pins)
+        show_object(pinmark)
         #stop
         
         doc = FreeCAD.ActiveDocument

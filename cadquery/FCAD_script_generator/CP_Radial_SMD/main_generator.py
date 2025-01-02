@@ -234,10 +234,10 @@ def make_radial_smd(params):
 
         body.cut(cim)
 
-    #show(body)
-    #show(base)
-    #show(cim)
-    #show(pins)
+    #show_object(body)
+    #show_object(base)
+    #show_object(cim)
+    #show_object(pins)
     #sleep
 
     return (body, base, cim, pins)
@@ -292,10 +292,10 @@ if __name__ == "__main__" or __name__ == "main_generator":
         Gui.ActiveDocument=Gui.getDocument(CheckedModelName)
         body, base, mark, pins = make_radial_smd(all_params[variant])
 
-        show(body)
-        show(base)
-        show(pins)
-        show(mark)
+        show_object(body)
+        show_object(base)
+        show_object(pins)
+        show_object(mark)
         
         doc = FreeCAD.ActiveDocument
         objs = GetListOfObjects(FreeCAD, doc)

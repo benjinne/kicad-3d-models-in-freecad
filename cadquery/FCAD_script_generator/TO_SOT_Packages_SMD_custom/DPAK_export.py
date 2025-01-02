@@ -150,7 +150,7 @@ def export_model(model):
         used_colour_keys.append(colour_key)
         colour = shaderColors.named_colors[colour_key].getDiffuseInt()
         colour_attr = colour + (0,)
-        show(parts[part]['name'], colour_attr)
+        show_object(parts[part]['name'], colour_attr)
 
     # label model and parts
     doc = FreeCAD.ActiveDocument

@@ -465,10 +465,10 @@ if __name__ == "__main__" or __name__ == "main_generator":
             pinmark_color = shaderColors.named_colors[pinmark_color_key].getDiffuseFloat()
                 
 
-        show(base)
-        show(top)
-        show(pins)
-        show(pinmark)
+        show_object(base)
+        show_object(top)
+        show_object(pins)
+        show_object(pinmark)
    
         doc = FreeCAD.ActiveDocument
         objs=GetListOfObjects(FreeCAD, doc)

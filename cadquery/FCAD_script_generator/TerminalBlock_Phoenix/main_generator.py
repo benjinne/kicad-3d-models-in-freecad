@@ -54,7 +54,7 @@ ___ver___ = "1.0.0 14/05/2020"
 # thanks to Frank Severinsen Shack for including vrml materials
 
 # maui import cadquery as cq
-# maui from Helpers import show
+# maui from CQGui.display import show_object
 from math import tan, radians, sqrt
 from collections import namedtuple
 global save_memory
@@ -131,7 +131,7 @@ try:
     Gui.activateWorkbench("CadQueryWorkbench")
     import cadquery
     cq = cadquery
-    from Helpers import show
+    from CQGui.display import show_object
     # CadQuery Gui
 except: # catch *all* exceptions
     msg = "missing CadQuery 0.3.0 or later Module!\r\n\r\n"

@@ -24,7 +24,7 @@ from cq_cad_tools import FuseObjs_wColors, GetListOfObjects, restore_Main_Tools,
     checkRequirements
 
 import cadquery as cq
-from Helpers import show
+from CQGui.display import show_object
 
 # Licence information of the generated models.
 #################################################################################################

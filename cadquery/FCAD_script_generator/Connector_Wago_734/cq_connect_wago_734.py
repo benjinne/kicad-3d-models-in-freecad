@@ -50,7 +50,7 @@ import collections
 from collections import namedtuple
 
 import cadquery as cq
-from Helpers import show
+from CQGui.display import show_object
 
 import FreeCAD, Draft, FreeCADGui
 import ImportGui

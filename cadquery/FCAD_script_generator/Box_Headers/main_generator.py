@@ -90,7 +90,7 @@ try:
 #    from Gui.Command import *
     Gui.activateWorkbench("CadQueryWorkbench")
     import cadquery as cq
-    from Helpers import show
+    from CQGui.display import show_object
     # CadQuery Gui
 except: # catch *all* exceptions
     msg = "missing CadQuery 0.3.0 or later Module!\r\n\r\n"

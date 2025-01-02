@@ -59,7 +59,7 @@ class LICENCE_Info():
 
 
 import cadquery as cq
-from Helpers import show
+from CQGui.display import show_object
 from collections import namedtuple
 import FreeCAD
 

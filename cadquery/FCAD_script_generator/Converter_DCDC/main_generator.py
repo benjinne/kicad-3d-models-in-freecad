@@ -57,7 +57,7 @@ check_log_file = 'check-log.md'
 global_3dpath = '../_3Dmodels/'
 
 # maui import cadquery as cq
-# maui from Helpers import show
+# maui from CQGui.display import show_object
 from math import tan, radians, sqrt
 from collections import namedtuple
 
@@ -116,7 +116,7 @@ try:
     Gui.activateWorkbench("CadQueryWorkbench")
     import cadquery
     cq = cadquery
-    from Helpers import show
+    from CQGui.display import show_object
     # CadQuery Gui
 except: # catch *all* exceptions
     msg = "missing CadQuery 0.5.2 or later Module!\r\n\r\n"

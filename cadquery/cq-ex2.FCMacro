@@ -17,7 +17,7 @@ Gui.activateWorkbench("CadQueryWorkbench")
 import FreeCADGui as Gui
 
 import cadquery
-from Helpers import show
+from CQGui.display import show_object
 
 #Getting the main window will allow us to start setting things up the way we want
 mw = FreeCADGui.getMainWindow()

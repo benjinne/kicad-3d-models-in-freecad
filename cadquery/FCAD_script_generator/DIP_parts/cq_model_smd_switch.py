@@ -32,7 +32,7 @@
 #****************************************************************************
 
 import cadquery as cq
-from Helpers import show
+from CQGui.display import show_object
 
 ## base parametes & model
 

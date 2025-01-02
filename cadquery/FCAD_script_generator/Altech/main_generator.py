@@ -52,7 +52,7 @@ __Comment__ = 'make Altech connectors 3D models exported to STEP and VRML for Ki
 ___ver___ = "1.3.4 18/06/2020"
 
 # maui import cadquery as cq
-# maui from Helpers import show
+# maui from CQGui.display import show_object
 from collections import namedtuple
 
 import math
@@ -113,7 +113,7 @@ try:
     Gui.activateWorkbench("CadQueryWorkbench")
     import cadquery
     cq = cadquery
-    from Helpers import show
+    from CQGui.display import show_object
     # CadQuery Gui
 except: # catch *all* exceptions
     msg = "missing CadQuery 0.3.0 or later Module!\r\n\r\n"

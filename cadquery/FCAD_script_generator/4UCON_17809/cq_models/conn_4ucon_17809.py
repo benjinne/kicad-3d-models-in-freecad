@@ -54,7 +54,7 @@ ___ver___ = "0.3 18/06/2020"
 
 
 import cadquery as cq
-from Helpers import show
+from CQGui.display import show_object
 from collections import namedtuple
 import FreeCAD
 from conn_4ucon_17809_params import *

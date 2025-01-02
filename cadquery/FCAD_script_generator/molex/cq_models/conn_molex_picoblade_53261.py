@@ -79,7 +79,7 @@ from cq_helpers import *
 
 import cadquery as cq
 from math import sqrt
-from Helpers import show
+from CQGui.display import show_object
 from collections import namedtuple
 import FreeCAD
 

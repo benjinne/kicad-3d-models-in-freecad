@@ -58,7 +58,7 @@ if FreeCAD.GuiUp:
 try:
     Gui.activateWorkbench("CadQueryWorkbench")
     import cadquery as cq
-    from Helpers import show
+    from CQGui.display import show_object
 except Exception as e:
     if QtGui is not None:
         reply = QtGui.QMessageBox.information(None, "Info ...", "Missing CadQuery 0.3.0 or later Module!\r\n\r\nhttps://github.com/jmwright/cadquery-freecad-module/wiki\n")

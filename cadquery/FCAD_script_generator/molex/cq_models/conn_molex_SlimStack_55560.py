@@ -76,7 +76,7 @@ else:
 from ribbon import Ribbon
 
 import cadquery as cq
-from Helpers import show
+from CQGui.display import show_object
 from collections import namedtuple
 import FreeCAD
 

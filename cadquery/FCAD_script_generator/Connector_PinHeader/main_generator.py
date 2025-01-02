@@ -53,7 +53,7 @@ ___ver___ = "2.0.0 21/11/2017"
 #sleep ### NB il modello presenta errori di geometria
 
 # maui import cadquery as cq
-# maui from Helpers import show
+# maui from CQGui.display import show_object
 from math import tan, cos, sin, radians, sqrt
 from collections import namedtuple
 global save_memory
@@ -138,7 +138,7 @@ try:
     Gui.activateWorkbench("CadQueryWorkbench")
     import cadquery
     cq = cadquery
-    from Helpers import show
+    from CQGui.display import show_object
     # CadQuery Gui
 except: # catch *all* exceptions
     msg = "missing CadQuery 0.3.0 or later Module!\r\n\r\n"

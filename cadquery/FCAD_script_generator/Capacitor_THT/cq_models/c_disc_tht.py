@@ -63,12 +63,12 @@ class LICENCE_Info():
 
 
 import cadquery as cq
-from Helpers import show
+from CQGui.display import show_object
 from collections import namedtuple
 import FreeCAD
 
 # maui import cadquery as cq
-# maui from Helpers import show
+# maui from CQGui.display import show_object
 from math import tan, radians, sqrt, sin
 
 from c_disc_tht_param import *

@@ -34,7 +34,7 @@
 # 2017-11-25
 
 import cadquery as cq
-from Helpers import show
+from CQGui.display import show_object
 
 ## base parametes & model
 import cq_base_model

@@ -156,7 +156,7 @@ def generate(**kwargs):
 # opend from within freecad
 if "module" in __name__:
     import cadquery as cq
-    from Helpers import show
+    from CQGui.display import show_object
 
     ext_thread = {
       'od': 'M3',
@@ -201,7 +201,7 @@ if __name__ == "__main__" or __name__ == "wuerth_smt_spacer":
     #    from Gui.Command import *
         Gui.activateWorkbench("CadQueryWorkbench")
         import cadquery as cq
-        from Helpers import show
+        from CQGui.display import show_object
         # CadQuery Gui
     except Exception as e: # catch *all* exceptions
         print(e)

@@ -89,7 +89,7 @@ try:
 #    from Gui.Command import *
     Gui.activateWorkbench("CadQueryWorkbench")
     import cadquery as cq
-    from Helpers import show
+    from CQGui.display import show_object
     # CadQuery Gui
 except Exception as e: # catch *all* exceptions
     print(e)

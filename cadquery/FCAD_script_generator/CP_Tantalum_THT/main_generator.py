@@ -52,7 +52,7 @@ ___ver___ = "1.3.2 10/02/2017"
 
 
 # maui import cadquery as cq
-# maui from Helpers import show
+# maui from CQGui.display import show_object
 from math import tan, radians, sqrt, sin, degrees
 from collections import namedtuple
 
@@ -124,7 +124,7 @@ try:
     #from Gui.Command import *
     Gui.activateWorkbench("CadQueryWorkbench")
     import cadquery as cq
-    from Helpers import show
+    from CQGui.display import show_object
     # CadQuery Gui
 except Exception as e: # catch *all* exceptions
     print(e)

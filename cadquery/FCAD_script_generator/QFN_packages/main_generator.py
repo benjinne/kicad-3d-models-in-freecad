@@ -53,7 +53,7 @@ ___ver___ = "1.0.6 18/06/2020"
 ###ToDo: QFN with ARC pad, exposed pad with chamfer
 
 # maui import cadquery as cq
-# maui from Helpers import show
+# maui from CQGui.display import show_object
 import math
 from math import tan, radians, sqrt
 try:
@@ -146,7 +146,7 @@ try:
 #    from Gui.Command import *
     Gui.activateWorkbench("CadQueryWorkbench")
     import cadquery as cq
-    from Helpers import show
+    from CQGui.display import show_object
     # CadQuery Gui
 except: # catch *all* exceptions
     msg="missing CadQuery 0.3.0 or later Module!\r\n\r\n"

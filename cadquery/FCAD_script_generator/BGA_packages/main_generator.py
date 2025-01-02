@@ -56,7 +56,7 @@ stop_on_first_error = True
 check_log_file = 'check-log.md'
 
 # maui import cadquery as cq
-# maui from Helpers import show
+# maui from CQGui.display import show_object
 import argparse
 
 from math import tan, radians, sqrt
@@ -121,7 +121,7 @@ try:
     #from Gui.Command import *
     Gui.activateWorkbench("CadQueryWorkbench")
     import cadquery as cq
-    from Helpers import show
+    from CQGui.display import show_object
     # CadQuery Gui
 except Exception as e: # catch *all* exceptions
     print(e)

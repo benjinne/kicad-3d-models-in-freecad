@@ -13,7 +13,7 @@ scriptdir = os.path.dirname (os.path.realpath(__file__))
 sys.path.append(scriptdir)
 
 import cadquery as cq
-from Helpers import show
+from CQGui.display import show_object
 
 # import cq_parameters
 from cq_parameters import all_params_molex_5569

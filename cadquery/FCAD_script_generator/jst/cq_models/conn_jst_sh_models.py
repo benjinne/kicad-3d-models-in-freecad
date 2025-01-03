@@ -83,23 +83,28 @@ def generate_pins(params):
 def generate_straight_pins(params):
     num_pins = params.num_pins
     pin_distance = (num_pins-1)*pin_pitch
+
     mount_pin = cq.Workplane("YZ").workplane(-pin_width/2)\
-    	.move(2.475,0).vLine(2.05).hLine(-2.2).vLine(-0.54).hLine(1.55)\
-    	.vLine(-0.71).hLine(-2.06).vLine(-0.43).hLine(0.49)\
-    	.vLine(-0.37).close().extrude(pin_width)
+    	.move(0.3,0.02).vLine(0.6).hLine(1.0).vLine(0.65)\
+        .hLine(0.5).vLine(-1.25)\
+        .close().extrude(pin_width)
 
     signal_pin = cq.Workplane("YZ").workplane(-pin_distance/2 -pin_width/2)\
-    	.move(-2.4754,0).vLine(0.3).hLine(0.7).vLine(0.35).hLine(0.67).vLine(2.8)\
-        .hLine(0.17).line(0.16,-0.4).vLine(-2.4).hLine(0.74).vLine(2.55)\
-        .hLine(-0.07).line(0.4,0.4).vLine(-3.35).hLine(-2.44+0.67).vLine(-0.25).close()\
-    	.extrude(pin_width)
-    pins = signal_pin
+    	.move(0.5,1.32).line(0.130,1.75).hLine(0.35).vLine(-1.75)\
+        .close().extrude(pin_width)
+
+    signal_pcb_pin = cq.Workplane("YZ").workplane(-pin_distance/2 -pin_width/2)\
+    	.move(-1.8,0).vLine(0.2).hLine(0.7).vLine(-0.13).hLine(0.1).vLine(-0.07)\
+        .close().extrude(pin_width)
+    
+    pins = signal_pin.union(signal_pcb_pin)
 
     for i in range(num_pins):
         pins = pins.union(signal_pin.translate((i*pin_pitch,0,0)))
+        pins = pins.union(signal_pcb_pin.translate((i*pin_pitch,0,0)))
 
-    pins = pins.union(mount_pin.translate((-pin_distance/2-1.85,0,0)))
-    pins = pins.union(mount_pin.translate((pin_distance/2+1.85,0,0)))
+    pins = pins.union(mount_pin.translate((-pin_distance/2-1.1,0,0)))
+    pins = pins.union(mount_pin.translate((pin_distance/2+1.1,0,0)))
     return pins
 
 def generate_angled_pins(params):

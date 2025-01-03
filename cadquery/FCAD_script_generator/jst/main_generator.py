@@ -89,7 +89,7 @@ try:
 except Exception as e: # catch *all* exceptions
     print(e)
     msg = "missing CadQuery 0.3.0 or later Module!\r\n\r\n"
-    msg += "https://github.com/jmwright/cadquery-freecad-module/wiki\n"
+    msg += "https://github.com/CadQuery/cadquery-freecad-workbench/blob/master/docs/installation.md \n"
     if QtGui is not None:
         reply = QtGui.QMessageBox.information(None,"Info ...",msg)
 
@@ -207,7 +207,7 @@ def export_one_part(module, variant, pincount, configuration, log):
 
     FreeCAD.activeDocument().recompute()
 
-    saveFCdoc(App, Gui, doc, FileName, out_dir)
+    saveFCdoc(App, Gui, doc, FileName, out_dir, False)
 
     #FreeCADGui.activateWorkbench("PartWorkbench")
     if save_memory == False and check_Model==False:
@@ -249,12 +249,13 @@ import conn_jst_eh_models
 import conn_jst_ph_models
 import conn_jst_xh_models
 import conn_jst_gh_models
+import conn_jst_sh_models
 
 all_series = {
     'eh':conn_jst_eh_models,
     'ph':conn_jst_ph_models,
     'xh':conn_jst_xh_models,
-    'gh':conn_jst_gh_models
+    'sh':conn_jst_sh_models
 }
 
 #########################################################################
@@ -337,7 +338,7 @@ if __name__ == "__main__" or __name__ == "main_generator":
 
 
     with open(check_log_file, 'w') as log:
-        log.write('# Check report for Molex 3d model genration\n')
+        log.write('# Check report for jst 3d model generation\n')
         for typ in args.series:
             try:
                 if exportSeries(typ, configuration, log, model_filter_regobj) != 0:

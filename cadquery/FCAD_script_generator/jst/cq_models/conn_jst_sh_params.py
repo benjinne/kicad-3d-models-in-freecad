@@ -59,7 +59,6 @@ from itertools import chain
 body_off_center_z = 0.15
 pin_width = 0.2
 pin_depth = 3.4
-pin_inner_lenght = 6.5
 pin_lock_h1 = 1.9
 pin_lock_h2 = 2.5
 pin_lock_d = 0.3

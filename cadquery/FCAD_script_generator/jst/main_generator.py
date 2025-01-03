@@ -207,7 +207,7 @@ def export_one_part(module, variant, pincount, configuration, log):
 
     FreeCAD.activeDocument().recompute()
 
-    saveFCdoc(App, Gui, doc, FileName, out_dir, False)
+    saveFCdoc(App, Gui, doc, FileName, out_dir, True)
 
     #FreeCADGui.activateWorkbench("PartWorkbench")
     if save_memory == False and check_Model==False:

@@ -56,7 +56,7 @@ from math import sqrt
 from itertools import chain
 
 #global parameter
-body_off_center_z = 0.15
+body_off_center_z = 0.07
 pin_width = 0.2
 pin_depth = 3.4
 pin_lock_h1 = 1.9
@@ -74,8 +74,6 @@ lock_tab_width = (0, 0, 0.95, 1.25, 2.45, 2.50, 4.45, 4.45, 4.45, 4.45, 6.1, 6.1
 Params = namedtuple("Params",[
     'angled',
     'num_pins',
-    'pin_angle_distance',
-    'pin_angle_length',
     'body_width',
     'body_height',
     'body_length'
@@ -85,21 +83,17 @@ def make_params_angled(num_pins):
     return Params(
         angled=True,
         num_pins=num_pins,
-        pin_angle_distance=9.2-7,
-        pin_angle_length=9.2,
-        body_width=4.25,
-        body_height=4.05,
-        body_length=4.5+((num_pins-1)*pin_pitch)
+        body_width=2.9,
+        body_height=4.25,
+        body_length=3.0+((num_pins-1)*pin_pitch)
     )
 def make_params_straight(num_pins):
     return Params(
         angled=False,
         num_pins=num_pins,
-        pin_angle_distance=0,
-        pin_angle_length=0,
-        body_width=4.25,
-        body_height=4.05,
-        body_length=4.5+((num_pins-1)*pin_pitch)
+        body_width=2.9,
+        body_height=4.25,
+        body_length=3.0+((num_pins-1)*pin_pitch)
 
     )
 

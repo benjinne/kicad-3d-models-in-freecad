@@ -146,113 +146,45 @@ def generate_straight_body(params):
     body_width = params.body_width
     body_height = params.body_height
     body_length = params.body_length
-    
-    top_L_side_cut_width = 1.95
-    top_L_side_cut_height = 2.25
-    top_L_side_cut_short_width = 0.60
-    top_L_side_cut_short_height = 0.65
-    top_L_side_cut_depth = 0.5
 
-    bottom_L_side_cut_width = 2.25
-    bottom_L_side_cut_height = 1.9
-    bottom_L_side_cut_short_width = 0.65
-    bottom_L_side_cut_short_height = 0.60
+    top_L_side_cut_depth = 0.5
     bottom_L_side_cut_depth = 0.5
 
-    front_U_width = body_length - 2*1
-    front_U_height = 2.05
-    front_U_y_offset = 0.6
-    front_U_short_width = 0.5
-    front_U_short_height = 0.5
-    front_U_depth = 2.6
-    front_U_pin_nobs_width = 0.5
-    front_U_pin_nobs_wall_width = (front_U_pin_nobs_width-pin_width)/2
-    front_U_pin_nobs_height = 0.2
-
-    lock_hole_depth = 1.4
-    lock_hole_y_offset = 1.02
-
-    lock_tab_depth = 0.4
-    lock_tab_y_offset = 0.32
-    lock_tab_height = 1
-    lock_tab_z_offset = 2.25
+    front_box_y_offset = 0.4
+    front_box_width = body_length - (0.8*2)
+    front_box_depth = 3.0
+    front_notch_depth = 2.4
 
     body_off_center_y = 0.35
-
-    body_top_square_hole_width = 1.1
-    body_top_square_hole_height = 0.6
-    body_top_square_hole_depth = 1
-    body_top_square_hole_x_offset = 0.35
-    body_top_square_hole_y_offset = 0.35
 
     body = cq.Workplane("XY").workplane()\
         .box(body_length, body_width, body_height,centered=(True, True, False))
     R_top_side_L_cut = cq.Workplane("YZ").workplane(-body_length/2).move(-body_width/2, body_height)\
-        .hLine(top_L_side_cut_width).vLine(-top_L_side_cut_short_height)\
-        .hLine(-(top_L_side_cut_width-top_L_side_cut_short_width))\
-        .vLine(-(top_L_side_cut_height-top_L_side_cut_short_height))\
-        .hLine(-top_L_side_cut_short_width).close()\
+        .hLine(1.2).vLine(-0.5).hLine(-0.65).vLine(-1.0).hLine(-0.55).close()\
         .extrude(top_L_side_cut_depth)
     L_top_side_L_cut = R_top_side_L_cut.translate((body_length-top_L_side_cut_depth,0 ,0))
     top_side_L_cut = R_top_side_L_cut.union(L_top_side_L_cut)
 
     R_bottom_side_L_cut = cq.Workplane("YZ").workplane(-body_length/2).move(body_width/2, 0)\
-        .hLine(-bottom_L_side_cut_width).vLine(bottom_L_side_cut_short_height)\
-        .hLine((bottom_L_side_cut_width-bottom_L_side_cut_short_width))\
-        .vLine((bottom_L_side_cut_height-bottom_L_side_cut_short_height))\
-        .hLine(bottom_L_side_cut_short_width).close()\
+        .hLine(-1.5).vLine(0.55).hLine(1.0).vLine(0.65).line(0.5,0.289).close()\
         .extrude(bottom_L_side_cut_depth)
     L_bottom_side_L_cut = R_bottom_side_L_cut.translate((body_length-bottom_L_side_cut_depth,0 ,0))
-    
-
     bottom_side_L_cut =R_bottom_side_L_cut.union(L_bottom_side_L_cut)
 
-
-    front_U_cut = cq.Workplane("XY").workplane(body_height)\
-        .move(front_U_width/2, -body_width/2+front_U_y_offset)\
-        .vLine(front_U_height).hLine(-front_U_short_width).vLine(-front_U_short_height)\
-        .hLine(-(front_U_width-2*front_U_short_width-(num_pins-1)*pin_pitch-front_U_pin_nobs_width)/2)
-    for x in range(0, num_pins):
-        front_U_cut = front_U_cut.vLine(-front_U_pin_nobs_height).hLine(-front_U_pin_nobs_wall_width)\
-            .vLine(front_U_pin_nobs_height).hLine(-pin_width).vLine(-front_U_pin_nobs_height)\
-            .hLine(-front_U_pin_nobs_wall_width).vLine(front_U_pin_nobs_height)
-        if x != num_pins-1:
-            front_U_cut = front_U_cut.hLine(-(pin_pitch-front_U_pin_nobs_width))
-    front_U_cut = front_U_cut.hLine(-(front_U_width-2*front_U_short_width-(num_pins-1)*pin_pitch-front_U_pin_nobs_width)/2)\
-        .vLine(front_U_short_height).hLine(-front_U_short_width)\
-        .vLine(-front_U_height).close().extrude(-front_U_depth)
-
-    lowerbar = cq.Workplane("YZ").workplane(-body_length/2).move(-body_width/2, 0)\
-        .hLine(0.95).vLine(0.5).hLine(-0.75).vLine(0.15).hLine(-0.2).close().extrude(body_length)
-
-    lock_hole = cq.Workplane("XY").workplane()\
-        .box(lock_hole_width[num_pins], lock_hole_depth, body_height,centered=(True, True, False))\
-        .translate((0, lock_hole_y_offset, 0))
-
-    lock_tab = cq.Workplane("YZ").workplane(-lock_tab_width[num_pins]/2).move(lock_tab_y_offset, lock_tab_z_offset)\
-        .hLine(lock_tab_depth).line(-lock_tab_depth, lock_tab_height).close().extrude(lock_tab_width[num_pins])
-
-    body_top_square_hole_template = cq.Workplane("XY").workplane()\
-        .box(body_top_square_hole_width, body_top_square_hole_height, body_top_square_hole_depth,centered=(True, True, False))\
-        .translate((-(body_length-body_top_square_hole_width)/2+body_top_square_hole_x_offset,\
-        (body_width-body_top_square_hole_height)/2-body_top_square_hole_y_offset, body_height-body_top_square_hole_depth))
+    top_box_cut = cq.Workplane("XY").workplane(body_height)\
+        .move(front_box_width/2, -body_width/2+front_box_y_offset)\
+        .vLine(2.1).hLine(-front_box_width).vLine(-2.1)\
+        .close().extrude(-front_box_depth)
     
-    body_top_square_hole = body_top_square_hole_template.union(body_top_square_hole_template\
-        .translate((body_length-body_top_square_hole_width-body_top_square_hole_x_offset*2,0,0)))
+    top_notch_cut = cq.Workplane("XY").workplane(body_height)\
+        .move(front_box_width/2+.35, -body_width/2+front_box_y_offset+1.0)\
+        .vLine(0.6).hLine(-.35-front_box_width-.35).vLine(-0.6)\
+        .close().extrude(-front_notch_depth)
 
-    if 10 <= num_pins <= 15:
-        body_top_square_hole = body_top_square_hole.union(body_top_square_hole_template\
-            .translate((-body_top_square_hole_width-body_top_square_hole_x_offset,0,0)))
-        body_top_square_hole = body_top_square_hole.union(body_top_square_hole_template\
-            .translate(((-body_length+body_top_square_hole_width*2+body_top_square_hole_x_offset*3),0,0)))
-
-    body = body.cut(lock_hole)
-    body = body.union(lock_tab)
-    body = body.cut(lowerbar)
-    body = body.cut(front_U_cut)
     body = body.cut(top_side_L_cut)
     body = body.cut(bottom_side_L_cut)
-    body = body.cut(body_top_square_hole)
+    body = body.cut(top_box_cut)
+    body = body.cut(top_notch_cut)
     body = body.translate((0,body_off_center_y,0))
     return body
     #return bottom_cutout
